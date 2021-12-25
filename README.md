@@ -23,8 +23,11 @@ First of all, please install Perl environment ([Strawberry](https://strawberrype
 Issue: need to fix the problem of UMLS::Interface that is unable to install due to mysql connecting issue
 
 Solution: adding fixed username and password in Line 721 in CuiFinder.pm from the distribution files and try again.
+
 7. `cpanm UMLS::Similarity`
+
 8. `cpanm UMLS::Similarity::lch --force` if error occurs
+
 9. Please check if you have installed DBI, DBD::mysql; install them if not;
 
 Issue: mysql.xs.dll not found problem: https://github.com/perl5-dbi/DBD-mysql/issues/318
@@ -39,7 +42,7 @@ pip install umls-similarity
 
 ## Measures
 
-Available measure are: 
+Available measures are: 
 1. Leacock and Chodorow (1998) referred to as lch
 2. Wu and Palmer (1994) referred to as  wup
 3. Zhong, et al. (2002) referred to as zhong
