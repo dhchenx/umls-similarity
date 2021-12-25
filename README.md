@@ -63,11 +63,12 @@ Available measures are:
 
 ## Let Codes Speak
 Example Code 1: Estimate similarity between two medical concepts using UMLS
+
 ```python
-from umls_similarity import UMLSSimilarity
+from umls_similarity.umls import UMLSSimilarity
 import os
 
-if __name__=="__main__":
+if __name__ == "__main__":
     # define MySQL information that stores UMLS data in your computer
     mysql_info = {}
     mysql_info["database"] = "umls"
@@ -83,28 +84,29 @@ if __name__=="__main__":
 
     # processing many CUI pairs from a text file where each line is formatted like 'C0006949<>C0031507'
     current_path = os.path.dirname(os.path.realpath(__file__))
-    sims =umls_sim.similarity_from_file(current_path+r"\cuis_umls_sim.txt",measure="lch")
+    sims = umls_sim.similarity_from_file(current_path + r"\cuis_umls_sim.txt", measure="lch")
     for sim in sims:
         print(sim)
 
     # Or directly pass two CUIs into the function below:
     sims = umls_sim.similarity(cui1="C0017601", cui2="C0232197", measure="lch")
-    print(sims[0]) # only one pair with two concepts
+    print(sims[0])  # only one pair with two concepts
 
 ```
 Example Code 2: Estimate similarity between concept using WordNet (version 2.1)
-```python
-from wn_similarity import WNSimilarity
 
-if __name__=="__main__":
-    
-    wn_root_path=r"C:\Program Files (x86)\WordNet\2.1"
+```python
+from umls_similarity.wordnet import WNSimilarity
+
+if __name__ == "__main__":
+
+    wn_root_path = r"C:\Program Files (x86)\WordNet\2.1"
     # perl_bin_path=r"C:\Strawberry\perl\bin\perl"
 
     var1 = "dog#n#1"
     var2 = "orange#n#1"
 
-    wn_sim=WNSimilarity(wn_root_path=wn_root_path)
+    wn_sim = WNSimilarity(wn_root_path=wn_root_path)
 
     sims = wn_sim.similarity(var1, var2)
     print(sims)
