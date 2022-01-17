@@ -106,3 +106,45 @@ class UMLSSimilarity:
         measures = ['lch', 'wup', 'zhong', 'path', 'cdist', 'nam', 'res', 'lin', 'jcn', 'vector', 'pks', 'faith',
                     'batet', 'sanchez']
         return measures
+
+    def get_ic_frequency(self,input_file,output_file):
+        kv = {}
+        kv["--st"]=""
+        kv["--compoundify"]=""
+        # kv["--term"]=""
+        kv["--metamap"]="14"
+        # kv["--config"]=""
+        kv["--database"] = self.mysql_info["database"]
+        kv["--username"] = self.mysql_info["username"]
+        kv["--password"] = self.mysql_info["password"]
+        kv["--hostname"] = self.mysql_info["hostname"]
+        # kv["--debug"]=""
+        kv[output_file]=""
+        kv[input_file]=""
+
+
+
+        current_path = os.path.dirname(os.path.realpath(__file__))
+        cwd = current_path + r'\scripts\umls\utils'
+
+        if self.work_directory != "":
+            cwd = self.work_directory
+
+        umls_similarity_pl_path = cwd + r"\create-icfrequency.pl"
+
+        ps = []
+        ps.append(self.perl_bin_path)
+        ps.append(umls_similarity_pl_path)
+        for k, v in enumerate(kv):
+            ps.append(v)
+            ps.append(kv[v])
+        # print(ps)
+        kv_str = " ".join(ps)
+        print(kv_str)
+        # print("Working Directory: ", cwd)
+        p = subprocess.Popen(ps, cwd=cwd, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+        stdout, stderr = p.communicate()
+        # print(stdout)
+        r_stdout = stdout.decode('utf-8', 'ignore')
+        print(r_stdout)
+        return r_stdout

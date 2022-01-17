@@ -1,6 +1,6 @@
 """A setuptools based setup module.
 
-Estimate Similarity of Medical Concepts based on Unified Medical Language System (UMLS)
+Estimate the similarity of medical concepts based on Unified Medical Language System (UMLS)
 
 """
 
@@ -36,12 +36,12 @@ setup(
     # For a discussion on single-sourcing the version across setup.py and the
     # project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.1',  # Required
+    version='0.0.2',  # Required
 
     # This is a one-line description or tagline of what your project does. This
     # corresponds to the "Summary" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#summary
-    description='Estimate similarity of medical concepts based on Unified Medical Language System (UMLS)',  # Optional
+    description='Estimate the similarity of medical concepts based on Unified Medical Language System (UMLS)',  # Optional
 
     # This is an optional longer description of your project that represents
     # the body of text which users will see when they visit PyPI.
@@ -147,6 +147,8 @@ setup(
         # "bs4"
     ],  # Optional
 
+    license="MIT",
+
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
     # syntax, for example:
@@ -201,7 +203,6 @@ setup(
 
     project_urls={  # Optional
         'Bug Reports': 'https://github.com/dhchenx/umls-similarity/issues',
-        'Say Thanks!': 'https://www.d.umn.edu/~tpederse/umls-similarity.html',
         'Source': 'https://github.com/dhchenx/umls-similarity',
     },
 

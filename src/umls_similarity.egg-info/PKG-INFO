@@ -1,3 +1,31 @@
+Metadata-Version: 2.1
+Name: umls-similarity
+Version: 0.0.2
+Summary: Estimate the similarity of medical concepts based on Unified Medical Language System (UMLS)
+Home-page: https://github.com/dhchenx/umls-similarity
+Author: Donghua Chen
+Author-email: douglaschan@126.com
+License: MIT
+Project-URL: Bug Reports, https://github.com/dhchenx/umls-similarity/issues
+Project-URL: Source, https://github.com/dhchenx/umls-similarity
+Keywords: unified medical language system,UMLS,semantic similarity,medical concept,domain knowledge,WordNet
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.6, <4
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Provides-Extra: test
+License-File: LICENSE
+
 # UMLS-Similarity
 
 Estimate the similarity of medical concepts based on Unified Medical Language System (UMLS) and WordNet
@@ -125,4 +153,6 @@ Note: There are plenty of unexpected errors to occur during the installation of 
 
 ## License
 The `umls-similarity` Python package is provided by [Donghua Chen](https://github.com/dhchenx). 
+
+
 
